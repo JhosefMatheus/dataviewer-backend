@@ -37,4 +37,22 @@ export class DashboardController {
             data: data
         });
     }
+
+    @Get("trackingChartData")
+    trackingChartData(@Res() response: Response): Response {
+        const data: object = this.dashboardService.trackingChartData();
+
+        return response.status(200).json({
+            data: data
+        });
+    }
+
+    @Get("timeManagementChartData")
+    timeManagementChartData(@Res() response: Response): Response {
+        const data: object = this.dashboardService.timeManagementData();
+
+        return response.status(200).json({
+            data: data
+        });
+    }
 }

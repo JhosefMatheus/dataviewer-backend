@@ -43,7 +43,7 @@ export class DashboardService {
                       }
                 ]
 
-                return data;
+                break;
 
             case "assunto":
                 data = [
@@ -73,7 +73,7 @@ export class DashboardService {
                     }
                 ]
 
-                return data;
+                break;
 
             case "lista":
                 data = [
@@ -184,8 +184,110 @@ export class DashboardService {
                     }
                 ]
                 
-                return data;
+                break;
         }
+
+        return data;
+    }
+
+    trackingChartData(): object {
+      let data: object = [
+          {
+            name: 'Aritméticos',
+            real: '140',
+            predicao: '120'
+          },
+          {
+            name: 'Se',
+            real: '163',
+            predicao: '160'
+          },
+          {
+            name: 'Enquanto',
+            real: '83',
+            predicao: '170'
+          },
+          {
+            name: 'For',
+            real: '60',
+            predicao: '100'
+          }
+      ];
+
+      return data;
+    }
+
+    timeManagementData(): object {
+      let data: object = {
+        data0: [
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          }
+        ],
+        data1: [
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          }
+        ],
+        data2: [
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          },
+          {
+            x: Math.floor(Math.random() * 7),
+            y: Math.floor(Math.random() * 600),
+            z: Math.floor(Math.random() * 300)
+          }
+        ]
+      }
+
+      return data;
     }
 
     assiduousStudentsData(): number {
