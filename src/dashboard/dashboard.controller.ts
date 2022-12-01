@@ -55,4 +55,22 @@ export class DashboardController {
             data: data
         });
     }
+
+    @Get("submissionsNumberData")
+    submissionsNumberData(@Res() response: Response): Response {
+        const data: number = this.dashboardService.submissionsNumberData();
+
+        return response.status(200).json({
+            data: data
+        });
+    }
+
+    @Get("accessesAmountData")
+    accessesAmountData(@Res() response: Response): Response {
+        const data: number = this.dashboardService.accessesAmountData();
+
+        return response.status(200).json({
+            data: data
+        });
+    }
 }

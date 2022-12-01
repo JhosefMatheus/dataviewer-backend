@@ -297,4 +297,12 @@ export class DashboardService {
     missingStudentsData(): number {
       return 78;
     }
+
+    submissionsNumberData(): number {
+      return 432;
+    }
+
+    accessesAmountData(): number {
+      return 610;
+    }
 }
