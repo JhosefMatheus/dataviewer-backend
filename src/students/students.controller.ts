@@ -8,7 +8,7 @@ import { StudentsService } from "./students.service";
 export class StudentsController {
     constructor(private readonly studentsService: StudentsService) {}
 
-    @Get("ranking")
+    @Get("overallRanking")
     studentsRanking(@Res() response: Response): Response {
         const data: object = this.studentsService.studentsRanking();
 
