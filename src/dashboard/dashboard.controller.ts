@@ -3,6 +3,7 @@ import { DashboardService } from "./dashboard.service";
 import { AuthGuard } from "@nestjs/passport";
 import { Response } from "express";
 import { DashboardPerformanceDto } from "./dto";
+import { IPerformanceChartData } from "./interface";
 
 @UseGuards(AuthGuard("jwt"))
 @Controller("dashboard")
@@ -10,10 +11,10 @@ export class DashboardController {
     constructor(private readonly dashboardService: DashboardService) {}
 
     @Post("performanceChartData")
-    performanceChartData(@Res() response: Response, @Body() body: DashboardPerformanceDto): Response {
+    async performanceChartData(@Res() response: Response, @Body() body: DashboardPerformanceDto): Promise<Response> {
         const { subject } = body;
 
-        const data: object = this.dashboardService.performanceChartData(subject);
+        const data: IPerformanceChartData[] = await this.dashboardService.performanceChartData(subject);
 
         return response.status(200).json({
             data: data

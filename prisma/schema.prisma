@@ -15,3 +15,29 @@ model User {
   email String @unique
   password String
 }
+
+model Classes {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  year String
+  semester String
+  description String
+}
+
+model PerformanceClassDifficultyList {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  class_id String
+  difficulty Json[]
+}
+
+model PerformanceClassSubjectList {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  class_id String
+  tags Json[]
+}
+
+model PerformanceClassList {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  class_id String
+  lists Json[]
+}
